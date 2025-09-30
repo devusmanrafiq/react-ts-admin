@@ -9,6 +9,7 @@ import WithSuspense from './with-suspense';
 
 function AppRoutes() {
   const { currentUser } = useAuth();
+  // const currentUser = true;
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -18,17 +19,16 @@ function AppRoutes() {
         {currentUser ? (
           <>
             <Route path='/*' element={<PrivateRoutes />} />
-            <Route path='auth/*' element={<Navigate to='/' />} />
+            <Route path='auth/*' element={<Navigate to='/' replace />} />
           </>
         ) : (
           <>
             <Route path='auth/*' element={<AuthPage />} />
-            <Route path='*' element={<Navigate to='/auth' />} />
+            <Route path='*' element={<Navigate to='/auth' replace />} />
           </>
         )}
-
         {/* Unknown path redirect */}
-        <Route path='*' element={<Navigate to='/' />} />
+        <Route path='*' element={<Navigate to='/' replace />} />
       </Route>
     )
   );

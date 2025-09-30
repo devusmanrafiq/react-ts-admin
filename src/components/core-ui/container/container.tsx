@@ -3,7 +3,7 @@ interface Props {
 }
 
 function Container({ children }: Props) {
-  return <div className='mx-auto max-w-screen-4xl'>{children}</div>;
+  return <div className='mx-auto max-w-screen-3xl'>{children}</div>;
 }
 
 export default Container;

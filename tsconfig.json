@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -19,9 +19,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
 
     "baseUrl": "src"
   },
-  "include": ["vite.config.ts", ".eslintrc.cjs", "src"],
+  "include": ["vite.config.ts", "eslint.config.js", "src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

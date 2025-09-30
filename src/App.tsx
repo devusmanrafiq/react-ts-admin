@@ -1,6 +1,5 @@
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { ConfigProvider } from 'antd';
 import { AuthInit, AuthProvider } from 'auth/core/auth-context';
 import { setupAxios } from 'auth/core/auth-helpers';
@@ -28,7 +27,7 @@ function App() {
           </ConfigProvider>
         </AuthInit>
       </AuthProvider>
-      <ReactQueryDevtools initialIsOpen={false} />
+      <ReactQueryDevtools initialIsOpen={false} buttonPosition='bottom-left' />
     </QueryClientProvider>
   );
 }

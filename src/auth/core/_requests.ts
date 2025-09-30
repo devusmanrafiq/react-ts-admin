@@ -2,8 +2,8 @@ import axios from 'axios';
 
 import { IAuthModel, ISignInForm } from './_models';
 
-const GET_USER_BY_ACCESS_TOKEN_URL = 'admin/auth/verify-token';
-const LOGIN_URL = 'admin/auth/login';
+const GET_USER_BY_ACCESS_TOKEN_URL = 'auth/verify-token';
+const LOGIN_URL = 'auth/login';
 
 export function login(body: ISignInForm) {
   return axios.post<IAuthModel>(LOGIN_URL, body);

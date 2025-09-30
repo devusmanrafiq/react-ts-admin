@@ -9,11 +9,11 @@ import useSignIn from './core/hooks/use-sign-in';
 const { Title } = Typography;
 
 function SignIn() {
-  const { error, isError, isLoading, isLoadingVerifyToken, mutate } = useSignIn();
+  const { error, isError, isPendingLogin, loginMutate } = useSignIn();
   const errorMessage = error instanceof AxiosError ? error?.response?.data?.message : '';
 
   const onFinish = (values: ISignInForm) => {
-    mutate(values);
+    loginMutate(values);
   };
 
   return (
@@ -68,8 +68,8 @@ function SignIn() {
           </Form.Item> */}
           <Form.Item>
             <Button
-              loading={isLoading || isLoadingVerifyToken}
-              className='bg-blue-600 text-white mt-5 py-6 flex text-lg font-semibold justify-center items-center'
+              loading={isPendingLogin}
+              className='bg-primary text-white mt-5 !py-5 flex text-lg font-semibold justify-center items-center'
               type='primary'
               htmlType='submit'
               block
