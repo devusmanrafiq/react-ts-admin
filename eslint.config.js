@@ -1,5 +1,6 @@
 import js from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
+import eslintComments from 'eslint-plugin-eslint-comments';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import prettier from 'eslint-plugin-prettier';
@@ -15,7 +16,14 @@ export default [
   ...tseslint.configs.recommended,
   reactHooks.configs['recommended-latest'],
   reactRefresh.configs.vite,
-  globalIgnores(['dist']),
+  globalIgnores([
+    'dist',
+    'commitlint.config.cjs',
+    'node_modules',
+    'vite.config.ts',
+    'tsconfig.json',
+    'tsconfig.node.json',
+  ]),
   {
     files: ['src/**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
@@ -29,6 +37,7 @@ export default [
       prettier,
       import: importPlugin,
       'jsx-a11y': jsxA11y,
+      'eslint-comments': eslintComments,
     },
     settings: {
       react: { version: 'detect' },
@@ -46,6 +55,10 @@ export default [
       '@typescript-eslint/no-unused-vars': 'warn',
       'import/prefer-default-export': 'off',
       'no-console': 'warn',
+      'eslint-comments/no-unused-disable': 'error',
+      'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
+      'eslint-comments/no-unlimited-disable': 'error',
+      'eslint-comments/no-unused-enable': 'error',
     },
   },
 ];
