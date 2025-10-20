@@ -1,0 +1,57 @@
+.main-layout .ant-layout-sider .ant-menu {
+  padding-right: 16px;
+}
+
+.main-layout .ant-menu-item {
+  height: 48px;
+  margin-left: 0;
+  padding-left: 32px !important;
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.main-layout .ant-menu-item svg {
+  width: 20px;
+}
+
+.main-layout .ant-menu-item-selected {
+  background-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  color: #000;
+  font-weight: bold;
+  border-radius: 0 8px 8px 0;
+}
+
+.main-layout .ant-menu-item-selected:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 0 8px 8px 0;
+}
+
+.main-layout .ant-menu-item-selected svg :is(path, circle, line) {
+  stroke: var(--color-primary);
+}
+
+.ant-menu-inline-collapsed .ant-menu-item-selected:before {
+  display: none;
+}
+
+.ant-menu-inline-collapsed .ant-menu-item {
+  padding-left: 28px !important;
+  width: 100%;
+}
+
+.ant-menu-inline-collapsed {
+  padding-right: 0 !important;
+}
+
+.ant-menu-inline-collapsed .ant-menu-item span {
+  display: none !important;
+}

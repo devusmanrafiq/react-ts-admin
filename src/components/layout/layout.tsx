@@ -1,21 +1,27 @@
-import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
 
 import { Layout as LayoutAnt } from 'antd';
 
 import ScrollToTop from 'helpers/scroll-to-top';
 
-import WithSuspense from 'routes/with-suspense';
-
+import Content from './components/content';
+import Footer from './components/footer';
+import Header from './components/header';
 import Sidebar from './components/sidebar';
 
 function Layout() {
+  const [collapsed, setCollapsed] = useState(false);
+  const collapsedStates = { collapsed, setCollapsed };
+
   return (
-    <LayoutAnt>
+    <LayoutAnt className='main-layout'>
       <ScrollToTop />
-      <Sidebar />
-      <WithSuspense>
-        <Outlet />
-      </WithSuspense>
+      <Sidebar collapsedStates={collapsedStates} />
+      <LayoutAnt>
+        <Header collapsedStates={collapsedStates} />
+        <Content />
+        <Footer />
+      </LayoutAnt>
     </LayoutAnt>
   );
 }

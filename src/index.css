@@ -20,7 +20,7 @@ html {
 
   background-color: var(--color-secondary);
 
-  color: rgba(255, 255, 255, 0.801);
+  color: rgba(0, 0, 0, 0.801);
   overflow-x: hidden;
 
   box-sizing: border-box;

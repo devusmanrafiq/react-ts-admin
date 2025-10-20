@@ -16,7 +16,7 @@ function AppRoutes() {
       <Route errorElement={<ErrorBoundary />}>
         <Route path='logout' element={<SignOut />} />
 
-        {currentUser ? (
+        {!currentUser ? (
           <>
             <Route path='/*' element={<PrivateRoutes />} />
             <Route path='auth/*' element={<Navigate to='/' replace />} />
