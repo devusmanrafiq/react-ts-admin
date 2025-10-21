@@ -17,7 +17,7 @@ function SignIn() {
   };
 
   return (
-    <div className='flex justify-center items-center h-lvh bg-slate-100'>
+    <div className='flex justify-center items-center h-lvh bg-gray-100'>
       <Card style={{ width: 500 }} className='shadow-lg py-5'>
         <div className='flex justify-center'>
           <Title level={1}>Admin Login</Title>
